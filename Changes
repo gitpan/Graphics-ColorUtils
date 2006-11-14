@@ -1,0 +1,8 @@
+Revision history for Perl extension Graphics::ColorUtils.
+
+0.03  Fri Oct 27 2006
+	- Initial release version (alpha)
+
+0.01  Wed Oct 18 15:16:05 2006
+	- original version; created by h2xs 1.23 with options
+		-AX -n Graphics::ColorUtils
