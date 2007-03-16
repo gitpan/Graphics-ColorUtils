@@ -1,4 +1,4 @@
-Graphics-ColorUtils version 0.03
+Graphics-ColorUtils version 0.05
 ================================
 
 A collection of easy-to-use utilities for handling colors:
@@ -31,7 +31,7 @@ Check the author's website at www.beyondcode.org.
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2006 by Philipp K. Janert
+Copyright (C) 2006,2007 by Philipp K. Janert
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.3 or,

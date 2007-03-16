@@ -1,5 +1,8 @@
 Revision history for Perl extension Graphics::ColorUtils.
 
+0.05  Fri Mar 16 2007
+	- Fixed some documentation bugs
+
 0.03  Fri Oct 27 2006
 	- Initial release version (alpha)
 

@@ -42,7 +42,7 @@ our @EXPORT = qw( rgb2yiq yiq2rgb
 		  rgb2hls hls2rgb
 		  rgb2hsv hsv2rgb );
 
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 # ==================================================
 # ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -232,6 +232,12 @@ sub hsv2rgb {
 
 # ==================================================
 # Gradients
+
+# Gradients grey, heat, map, and rainbow have been inspired by similar 
+# ideas in Yorick. 
+# For Yorick, cf http://yorick.sourceforge.net 
+# and also http://www.maumae.net/yorick/doc/index.php
+# as well as http://www.mhatt.aps.anl.gov/dohn/software/yorick/
 
 BEGIN {
 my %_gradients = (
@@ -986,18 +992,18 @@ Graphics::ColorUtils - Easy-to-use color space conversions and more.
 
   # -----
 
-  use Graphics::ColorUtils qw( gradients );
+  use Graphics::ColorUtils qw( :gradients );
 
   ( $r, $g, $b ) = grad2rgb( $name, $f );  # where 0.0 <= $f < 1.0
   $hex_string    = grad2rgb( $name, $f );
 
   %color_count_for_gradient_name = available_gradients();
-  $array_ref_of_rgb_triples      = gradient();
+  $array_ref_of_rgb_triples      = gradient( $name );
   $array_ref_old_grad            = register_gradient( $name, $array_ref_of_rgb_triples ); 
 
   # -----
 
-  use Graphics::ColorUtils qw( names );
+  use Graphics::ColorUtils qw( :names );
 
   ( $r, $g, $b ) = name2rgb( $name );
   $hex_string    = name2rgb( $name );
@@ -1048,7 +1054,7 @@ Legal values:
   Y, I, Q: 0..1
   C, M, Y: 0..1
 
-  R, G, B: 0..255 (may be float on input, guaranteed int on ouput)
+  R, G, B: 0..255 (may be float on input, guaranteed int on output)
 
   H:       0..360 (red=0->yellow->green=120->cyan->blue=240->magenta steps of 60)
   S, V:    0..1
@@ -1220,7 +1226,7 @@ Names containing multiple colons may not be handled correctly.
 =item Hue wrap-around
 
 While hue should be restricted to 0..360, both C<hsv2rgb()> and
-C<hls2rgb()> tolerate "moderate" violation of this constraing (up
+C<hls2rgb()> tolerate "moderate" violation of this constraint (up
 to +/- 359). 
 
 =back
@@ -1333,7 +1339,7 @@ available.
 
 by Donald Hearn and M. Pauline Baker (2nd ed, 1997)
 
-Another textbood.
+Another textbook.
 
 =back
 
@@ -1353,7 +1359,7 @@ There were two intents that drove part of the design:
   file itself is certainly a somewhat contentious decision. Here is the
   rationale: By embedding the data directly, we avoid the issue of files
   missing at run-time and the required error detection and recovery code.
-  The impact on loading the module (as compared to require-ing the data
+  The impact on loading the module (as compared to requiring the data
   files) should be minimal - the same amount of data gets read one way
   or the other. 
 - And obviously I did not want to rely on the file rgb.txt to be there.
