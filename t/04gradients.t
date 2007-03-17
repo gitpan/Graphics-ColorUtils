@@ -1,5 +1,5 @@
 
-use Test::More tests => 117;
+use Test::More tests => 120;
 use Graphics::ColorUtils qw( :gradients );
 
 my %grads = available_gradients();
@@ -60,9 +60,11 @@ ok( defined $renew, "Renewed gradient - old value found" );
 is( scalar @$renew, 4, "Modified gradient is reference to old one" );
 is( grad2rgb( 'foo', 0.99 ), '#080808', "New last element correct" );
 
-my @bar = @foo; # Deep copy!
-push @bar, [ 1, 1, 1 ];
+ok( 1, "Still alive" );
+my @bar = ( [0,0,0],[3,3,3],[1,2.3],[10,0,20],[1,1,1] );
+ok( 1, "Yet still alive" );
 $renew = register_gradient( 'foo', \@bar );
+ok( 1, "Renewed still alive" );
 ok( defined $renew, "Renewed gradient - old value found" );
 is( scalar @$renew, 4, "Modified gradient unrelated to old gradient" );
 $grad = gradient( 'foo' );

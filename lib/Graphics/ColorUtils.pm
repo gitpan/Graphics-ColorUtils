@@ -42,7 +42,7 @@ our @EXPORT = qw( rgb2yiq yiq2rgb
 		  rgb2hls hls2rgb
 		  rgb2hsv hsv2rgb );
 
-our $VERSION = '0.05';
+our $VERSION = '0.07';
 
 # ==================================================
 # ++++++++++++++++++++++++++++++++++++++++++++++++++
