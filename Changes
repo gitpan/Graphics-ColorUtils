@@ -1,5 +1,8 @@
 Revision history for Perl extension Graphics::ColorUtils.
 
+0.09  Sun Mar 18 2007
+	- Removing offending tests while searching for root cause details
+
 0.07  Sat Mar 17 2007
 	- Fixing test failures on some platforms
 
