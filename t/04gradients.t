@@ -1,5 +1,5 @@
 
-use Test::More tests => 114;
+use Test::More tests => 118;
 use Graphics::ColorUtils qw( :gradients );
 
 my %grads = available_gradients();
@@ -60,13 +60,11 @@ ok( defined $renew, "Renewed gradient - old value found" );
 is( scalar @$renew, 4, "Modified gradient is reference to old one" );
 is( grad2rgb( 'foo', 0.99 ), '#080808', "New last element correct" );
 
-# The tests below fail mysteriously on certain platforms (Linux 64?)
-# Commenting them out while waiting for more detailed bug reports.
 my @bar = ( [0,0,0],[3,3,3],[1,2.3],[10,0,20],[1,1,1] );
 $renew = register_gradient( 'foo', \@bar );
-# ok( defined $renew, "Renewed gradient - old value found" );
-# is( scalar @$renew, 4, "Modified gradient unrelated to old gradient" );
+ok( defined $renew, "Renewed gradient - old value found" );
+is( scalar @$renew, 4, "Modified gradient unrelated to old gradient" );
 $grad = gradient( 'foo' );
-# is( scalar @$grad, 5, "New gradient correct element count" );
-# is( grad2rgb( 'foo', 0.99 ), '#010101', "New-new last element correct" );
+is( scalar @$grad, 5, "New gradient correct element count" );
+is( grad2rgb( 'foo', 0.99 ), '#010101', "New-new last element correct" );
 ok( 1, "All done" );

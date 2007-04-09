@@ -42,7 +42,7 @@ our @EXPORT = qw( rgb2yiq yiq2rgb
 		  rgb2hls hls2rgb
 		  rgb2hsv hsv2rgb );
 
-our $VERSION = '0.09';
+our $VERSION = '0.11';
 
 # ==================================================
 # ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1021,8 +1021,8 @@ This modules provides some utility functions to handle colors and
 color space conversions.
 
 The interface has been kept simple, so that most functions can be called
-"inline" when making calls to graphics libraries such as GD, Tk, or 
-when generating HTML/CSS. (E.g. for GD:  
+"inline" when making calls to graphics libraries such as GD, Tk, or
+when generating HTML/CSS. (E.g. for GD:
 C<$c = $img-E<gt>colorAllocate( hsv2rgb( 270, 0.5, 0.3 ) );>.)
 
 Features:
@@ -1184,10 +1184,14 @@ old array, C<undef> otherwise.
 
 =back
 
+An introduction, together with a large number of sample gradients
+can be found at Paul Bourke's webpage:
+http://local.wasp.uwa.edu.au/~pbourke/texture_colour/colourramp/
+
 
 =head1 EXPORT
 
-Exports by default: 
+Exports by default:
 
   rgb2yiq(), yiq2rgb()
   rgb2cmy(), cmy2rgb()
@@ -1242,7 +1246,7 @@ This module has only been explicitly tested with Perl 5.8,
 but nothing (should) prevent it from running fine with other
 versions of Perl.
 
-=item Additional color space conversions 
+=item Additional color space conversions
 
 For instance to and from XYZ, CIE, Luv; I<if desired!>.
 
@@ -1258,12 +1262,12 @@ Suggestions welcome!
 
 =over 4
 
-=item Color::Rgb 
+=item Color::Rgb
 
 Lookup of color values for names. Similar to the "names" methods
 in this module. Requires F<X11/rgb.txt>.
 
-=item Graphics::ColorNames 
+=item Graphics::ColorNames
 
 Lookup of color values for names. Similar to the "names" methods
 in this module. Does I<not> require F<X11/rgb.txt>. Comes with
@@ -1276,7 +1280,7 @@ and Luv. Object-oriented interface requires instantiation of a
 "color-object" for each color, which can then provide a 
 representation of itself in all color spaces.
 
-=item Color::Scheme 
+=item Color::Scheme
 
 Generates pleasant color schemes (sets of colors).
 
@@ -1309,9 +1313,17 @@ the X11 libraries in /usr/lib/X11/rgb.txt on an X11 system
 
 =over 4
 
-=item Poynton's Color FAQ: http://www.poynton.com/ColorFAQ.html
+=item *
 
-=item Paper on Color Conversion Algorithms: http://www.poynton.com/PDFs/coloureq.pdf
+Poynton's Color FAQ: http://www.poynton.com/ColorFAQ.html
+
+=item *
+
+Paper on Color Conversion Algorithms: http://www.poynton.com/PDFs/coloureq.pdf
+
+=item *
+
+Paul Bourke's Webpage with many relevant details: http://local.wasp.uwa.edu.au/~pbourke/texture_colour/
 
 =back
 
@@ -1320,33 +1332,36 @@ the X11 libraries in /usr/lib/X11/rgb.txt on an X11 system
 
 =over 4
 
-=item Computer Graphics - Principles and Practice
+=item *
 
+B<Computer Graphics - Principles and Practice>
 by James D. Foley, Andries van Dam, Steven K. Feiner, John F. Hughes
 (Second Edition in C, 1990, mult. print runs)
 
-A comprehensive reference. I<Beware of typos in the algorithms!>
+I<A comprehensive reference. B<Beware of typos in the algorithms!>>
 
-=item Introduction to Computer Graphics
+=item *
 
+B<Introduction to Computer Graphics>
 by James D. Foley, Andries van Dam, Steven K. Feiner, John F. Hughes, 
 Richard L. Phillips (1990, mult. print runs)
 
-A textbook based on the previous title. Possibly more accessible and
-available.
+I<A textbook based on the previous title. Possibly more accessible and
+available.>
 
-=item Computer Graphics - C Version
+=item *
 
+B<Computer Graphics - C Version>
 by Donald Hearn and M. Pauline Baker (2nd ed, 1997)
 
-Another textbook.
+I<Another textbook.>
 
 =back
 
 
 =head2 Website
 
-The author's website: http://www.beyondcode.org
+The author's website: www.beyondcode.org.
 
 
 =begin IMPLEMENTATION_NOTE
