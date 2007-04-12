@@ -1,5 +1,5 @@
 
-use Test::More qw( no_plan );
+use Test::More tests => 3486; # qw( no_plan );
 use Graphics::ColorUtils;
 
 # ==================================================

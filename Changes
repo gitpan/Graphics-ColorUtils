@@ -1,5 +1,9 @@
 Revision history for Perl extension Graphics::ColorUtils.
 
+0.15  Thu Apr 12 2007
+	- Still dealing with the problem that 04gradients.t dies 
+	  prematurely on some platforms.
+
 0.11  Sun Apr 08 2007
 	- Adding some references to POD.
 	- Adding a single newline at the end of 04gradients.t (!).

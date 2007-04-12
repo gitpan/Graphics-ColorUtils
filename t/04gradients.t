@@ -68,3 +68,8 @@ $grad = gradient( 'foo' );
 is( scalar @$grad, 5, "New gradient correct element count" );
 is( grad2rgb( 'foo', 0.99 ), '#010101', "New-new last element correct" );
 ok( 1, "All done" );
+
+# --- blank comment
+
+
+
