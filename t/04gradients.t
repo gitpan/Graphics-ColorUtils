@@ -1,5 +1,5 @@
 
-use Test::More tests => 118;
+use Test::More qw( no_plan ); # tests => 118;
 use Graphics::ColorUtils qw( :gradients );
 
 my %grads = available_gradients();

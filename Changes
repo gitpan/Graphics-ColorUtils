@@ -1,5 +1,8 @@
 Revision history for Perl extension Graphics::ColorUtils.
 
+0.17  Sun May 20 2007
+	- Eliminating the explicit test counter from 04gradients.t.
+
 0.15  Thu Apr 12 2007
 	- Still dealing with the problem that 04gradients.t dies 
 	  prematurely on some platforms.

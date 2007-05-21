@@ -42,7 +42,7 @@ our @EXPORT = qw( rgb2yiq yiq2rgb
 		  rgb2hls hls2rgb
 		  rgb2hsv hsv2rgb );
 
-our $VERSION = '0.15';
+our $VERSION = '0.17';
 
 # ==================================================
 # ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1359,11 +1359,6 @@ I<Another textbook.>
 =back
 
 
-=head2 Website
-
-The author's website: www.beyondcode.org.
-
-
 =begin IMPLEMENTATION_NOTE
 
 There were two intents that drove part of the design:
@@ -1385,7 +1380,7 @@ There were two intents that drove part of the design:
 
 =head1 AUTHOR
 
-Philipp K. Janert, E<lt>janert at ieee dot org E<gt>
+Philipp K. Janert, E<lt>janert at ieee dot org E<gt>, http://www.beyondcode.org
 
 =head1 COPYRIGHT AND LICENSE
 
